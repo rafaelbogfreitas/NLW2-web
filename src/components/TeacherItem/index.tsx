@@ -7,7 +7,7 @@ const TeacherItem = () => {
   return (
     <article className="teacher-item">
       <header>
-        <img src="https://avatars0.githubusercontent.com/u/43966974?s=400&u=e55f14d1486ecfbf0719b9531206240c56998ee1&v=4" alt="Profile picture" />
+        <img src="https://avatars0.githubusercontent.com/u/43966974?s=400&u=e55f14d1486ecfbf0719b9531206240c56998ee1&v=4" alt="Rafael" />
         <div>
           <strong>Rafael</strong>
           <span>Geografia</span>

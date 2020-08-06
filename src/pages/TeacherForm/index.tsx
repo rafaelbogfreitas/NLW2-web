@@ -2,6 +2,7 @@ import React from 'react'
 import PageHeader from '../../components/PageHeader';
 
 import "./styles.css";
+import Input from '../../components/Input';
 
 const TeacherForm = () => {
   return (
@@ -14,21 +15,10 @@ const TeacherForm = () => {
       <main>
         <fieldset>
           <legend>Seus dados</legend>
-          
-          <div className="input-block">
-            <label htmlFor="name">Nome completo</label>
-            <input type="text" id="name" />
-          </div>
 
-          <div className="input-block">
-            <label htmlFor="avatar">Avatar</label>
-            <input type="text" id="avatar" />
-          </div>
-
-          <div className="input-block">
-            <label htmlFor="whatsapp">Whatsapp</label>
-            <input type="text" id="whatsapp" />
-          </div>
+          <Input name="name" label="Nome completo" />
+          <Input name="avatar" label="Avatar" />
+          <Input name="whatsapp" label="Whatsapp" />
 
         </fieldset>
       </main>
