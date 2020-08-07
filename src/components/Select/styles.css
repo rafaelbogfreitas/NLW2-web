@@ -3,22 +3,21 @@ label {
   color: var(--color-text-in-primary);
 }
 
-.textarea-block {
+.select-block {
   position: relative;
 }
 
-.textarea-block + .textarea-block {
+.select-block + .select-block {
   margin-top: 1.4rem;
 }
 
-.textarea-block label {
+.select-block label {
   font-size: 1.4rem;
 }
 
-.textarea-block textarea {
+.select-block select {
   width: 100%;
-  height: 16rem;
-  min-height: 8rem;
+  height: 6rem;
   resize: vertical;
   margin-top: 0.8rem;
   border-radius: 0.8rem;
@@ -29,7 +28,7 @@ label {
   font: 1.6rem Archivo;
 }
 
-.textarea-block:focus-within::after {
+.select-block:focus-within::after {
   width: calc(100% - 3.2rem);
   height: 2px;
   content: "";
@@ -37,11 +36,11 @@ label {
   position: absolute;
   left: 1.6rem;
   right: 1.6rem;
-  bottom: 0.8rem;
+  bottom: 0rem;
 }
 
 @media (min-width: 700px) {
-  .textarea-block + .textarea-block {
+  .select-block + .select-block {
     margin-top: 0;
   }
 }
