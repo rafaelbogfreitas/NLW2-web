@@ -2,33 +2,50 @@ import React from 'react';
 import whatsappIcon from "../../assets/images/icons/whatsapp.svg";
 
 import "./styles.css";
+import api from '../../services/api';
 
-const TeacherItem = () => {
+interface TeacherItemProps {
+  name: string;
+  avatar: string;
+  subject: string;
+  bio: string;
+  cost: number;
+  whatsapp: string;
+  id: number;
+}
+
+const TeacherItem: React.FC<TeacherItemProps> = ({ name, subject, bio, cost, avatar, whatsapp, id }) => {
+  const createNewConnection = () => {
+    api.post("connections", {
+      user_id: id
+    })
+  }
+
   return (
     <article className="teacher-item">
       <header>
-        <img src="https://avatars0.githubusercontent.com/u/43966974?s=400&u=e55f14d1486ecfbf0719b9531206240c56998ee1&v=4" alt="Rafael" />
+        <img src={avatar} alt="Rafael" />
         <div>
-          <strong>Rafael</strong>
-          <span>Geografia</span>
+          <strong>{name}</strong>
+          <span>{subject}</span>
         </div>
       </header>
-      <p>
-        Ótimo professor
-            <br /><br />
-            Anos de experiência com Geografia analítica e Geologia.
-          </p>
+      <p>{bio}</p>
       <footer>
         <p>
           Preço/hora
           <strong>
-             R$ 80,00
+            R$ {cost},00
           </strong>
         </p>
-        <button type="button">
+        <a onClick={createNewConnection}
+          href={`https://api.whatsapp.com/send?phone=${whatsapp}`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <img src={whatsappIcon} alt="Whatsapp" />
           Entrar em contato
-        </button>
+        </a>
       </footer>
     </article>
   )
